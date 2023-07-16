@@ -3,7 +3,9 @@ const Issue = require('../models/Issue');
 const mongoose = require('mongoose');
 
 
-//create a project for the user
+//@desc Create new Project
+//@route POST  project/create
+//@access Public
 module.exports.create = async function(req,res){
     try{
         Project.create({
@@ -17,7 +19,9 @@ module.exports.create = async function(req,res){
     }
 }
 
-//finding project and rendering it on page 
+//@desc Find a Project
+//@route Get  project/:id
+//@access Public
 module.exports.project = async function(req,res){
     try{
         let project = await Project.findById(req.params.id).populate({
@@ -36,7 +40,10 @@ module.exports.project = async function(req,res){
     }
 };
 
-//Creating an Issue 
+
+//@desc Create a new Issues
+//@route POST  project/:id
+//@access Public
 module.exports.createIssue = async function(req,res){
     try{
         let project = await Project.findById(req.params.id);

@@ -1,11 +1,11 @@
 const express = require('express');
 
 const router = express.Router();
-const homeController = require('../controllers/HomeController');
+const {home} = require('../controllers/HomeController');
 
 console.log('router loaded'.cyan.bold);
 
-router.get('/',homeController.home);
+router.get('/',home);
 router.use('/project', require('./project'));
 
 module.exports = router;
