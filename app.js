@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require('express');//Requiring express module
 const dotenv = require('dotenv');
-const morgan = require('morgan');
-const connectDB = require('./config/db');
-const colors = require('colors');
-const PORT = process.env.PORT || 5500;
-const expressLayouts = require('express-ejs-layouts');
+const morgan = require('morgan');//Https request logger middleware ***** -> only for dev
+const connectDB = require('./config/db'); //Requiring dotenv module
+const colors = require('colors');//This is an additional module which I prefer to use helps me to distinguish results over the  console. ***** -> only for dev .
+const PORT = process.env.PORT || 5500; //defining the port 
+const expressLayouts = require('express-ejs-layouts'); //requiring the ejs layouts 
 const path = require('path');
 
 //Load env vars 
@@ -16,7 +16,7 @@ connectDB();
 const app = express();
 
 app.use(express.urlencoded());
-app.use(express.static('assets'));
+app.use(express.static('assets')); //using this middleware to load external/ static files in the project 
 app.use(expressLayouts);
 
 // extracting styles and scripts
