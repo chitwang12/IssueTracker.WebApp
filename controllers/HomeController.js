@@ -1,7 +1,7 @@
 const Project = require('../models/Project');
 
 
-//@desc Find all Project
+//@desc loads the hoempage and Find all Project
 //@route Get  /
 //@access Public
 module.exports.home = async function (req, res) {

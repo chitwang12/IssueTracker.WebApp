@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 //@desc Create new Project
-//@route POST  project/create
+//@route POST project/create
 //@access Public
 module.exports.create = async function(req,res){
     try{
@@ -22,6 +22,7 @@ module.exports.create = async function(req,res){
 //@desc Find a Project
 //@route Get  project/:id
 //@access Public
+//Additional Note in this case the issue-form.ejs partial gets loaded
 module.exports.project = async function(req,res){
     try{
         let project = await Project.findById(req.params.id).populate({
